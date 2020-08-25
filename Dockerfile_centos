@@ -1,0 +1,7 @@
+FROM centos:latest
+
+MAINTAINER vikas
+
+RUN  cd ..
+
+CMD ["echo", "Hello World"]

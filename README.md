@@ -26,7 +26,8 @@ docker-compose up -d
 ## verify if both servers are uP
 
 nc -z localhost 2181 // zookeeper
-nc -z localhost 9092 // kafka
+
+// kafka
 
 ## Attach to the Kafka Broker running in Docker
 

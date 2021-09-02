@@ -1,3 +1,30 @@
+important for kafka running in docker
+
+>docker exec -it kafka bash
+
+find the ip of both container i.e docker and zookeeper
+
+with >docker ps  we can find image number
+
+>docker inspect 8dcc00fcad65 | grep "IPAddress"
+
+            "SecondaryIPAddresses": null,
+            "IPAddress": "",
+                    "IPAddress": "172.19.0.2",
+
+create topic
+>kafka-topics --zookeeper 172.19.0.2:2181 --topic first_topic --create --partitions 3 --replication-factor 2
+
+list topic
+
+> kafka-topics --zookeeper 172.19.0.2:2181
+
+
+
+kafka-topics  --create  --bootstrap-server localhost:9092  --replication-factor 1 --partitions 3 --topic users
+
+
+
 KAFKA_HOME/bin/kafka-broker-api-versions.sh --bootstrap-server localhost:9092 --version
 🐳 Example to execute in Docker:
 ./usr/bin/kafka-broker-api-versions --bootstrap-server localhost:9092 --version
@@ -168,3 +195,7 @@ Find all the partitions where one or more of the replicas for the partition are 
 $KAFKA_HOME/bin/kafka-topics.sh --zookeeper localhost:2181 --describe --under-replicated-partitions
 🐳 Example to execute in Docker:
 ./usr/bin/kafka-topics --zookeeper zookeeper:2181 --describe --under-replicated-partitions
+
+
+
+
